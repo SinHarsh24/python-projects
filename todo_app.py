@@ -18,7 +18,7 @@ while True:
             for index, items in enumerate(todos):
                 row = f"{index + 1} - {items}"
                 # Print the index and the to-do item (ensure the first letter of the item is capitalized)
-                print(row.capitalize())
+                print(row)
         case 'edit':
             # If the user action is 'edit', prompt for the number of the to-do item to edit
             number = int(input("Number of todo to edit: "))
