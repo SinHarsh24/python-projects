@@ -14,8 +14,10 @@ while True:
             todos.append(todo)
         case 'show':
             # If the user action is 'show', print all to-do items in the list capitalized
-            for item in todos:
-                print(item.capitalize())
+            # Iterate through the list of to-do items with their indices
+            for index, items in enumerate(todos):
+                # Print the index and the capitalized to-do item
+                print(index, '-', items.capitalize())
         case 'edit':
             # If the user action is 'edit', prompt for the number of the to-do item to edit
             number = int(input("Number of todo to edit: "))
