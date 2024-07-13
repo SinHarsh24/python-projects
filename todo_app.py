@@ -4,7 +4,7 @@ todos = []
 # Start an infinite loop to continuously prompt the user for actions
 while True:
     # Prompt the user for an action and strip any leading/trailing whitespace
-    user_action = input("Type add, show, or exit: ").strip()
+    user_action = input("Type add, show, edit or exit: ").strip()
 
     # Use match-case statement to handle different user actions
     match user_action:
@@ -14,8 +14,15 @@ while True:
             todos.append(todo)
         case 'show':
             # If the user action is 'show', print all to-do items in the list capitalized
-            for todo in todos:
-                print(todo.capitalize())
+            for item in todos:
+                print(item.capitalize())
+        case 'edit':
+            # If the user action is 'edit', prompt for the number of the to-do item to edit
+            number = int(input("Number of todo to edit: "))
+            number = number - 1  # Adjust for zero-based index
+            # Prompt for the new to-do item and replace the old item at the specified index
+            new_todo = input('Enter new todo: ')
+            todos[number] = new_todo
         case 'exit':
             # If the user action is 'exit', break out of the loop
             break
